@@ -1,0 +1,10 @@
+
+*.sql
+*.db
+*.txt
+*.filters
+*.user
+**/Debug
+**/Release
+**/x64
+**/.vs
