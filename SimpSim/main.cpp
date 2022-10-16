@@ -7,7 +7,7 @@
 Actionary *actionary;  // global pointer to the actionary
 AgentTable agentTable;
 parTime *partime;	// global pointer to PAR time class (So we can manipulate time)
-char* actionLocation = strdup("Castle-Actions/"); // Relative path to par (or action) folder
+char* actionLocation = strdup("IEEE TOG/Castle/Castle-Actions/"); // Relative path to par (or action) folder
 //char* actionLocation = strdup("../../../../Heist-Actions/");
 int PAR::dbg = 1; /*< Used to see all the debug information in the code */
 FILE* PAR::file_name = stdout; //fopen("D:/par.log", "w");/*! <The output stream of all debug information */
@@ -235,7 +235,7 @@ int main(void){
 	std::vector<std::string> lines;
 	std::ifstream myfile;
 	std::string line;
-	myfile.open("castle_plan.pddl");
+	myfile.open("IEEE TOG/Castle/castle_plan.pddl");
 	if (myfile.is_open()) {
 		while (getline(myfile, line)) {
 			lines.push_back(line);
@@ -243,8 +243,8 @@ int main(void){
 		myfile.close();
 	}
 
-	StrPlotGraph* graph = SimpSim::GetLocations(lines,"Castle-Actions/", "Extern-Python-Files/");
-	std::string result = SimpSim::GetSimpSim(lines, "Castle-Actions/","Extern-Python-Files/");
+	StrPlotGraph* graph = SimpSim::GetLocations(lines,"IEEE TOG/Castle/Castle-Actions/", "Extern-Python-Files/");
+	std::string result = SimpSim::GetSimpSim(lines, "IEEE TOG/Castle/Castle-Actions/","Extern-Python-Files/");
 	std::cout << result;
 	/*std::vector<plot_point> points = readPlotPoints(lines);
 	std::vector<MetaAction*> travel;
